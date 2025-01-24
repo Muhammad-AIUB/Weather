@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #1e3c72,
+    #2a5298
+  ); /* Gradient background */
+  color: #fff;
+}
+
+/* Weather App Container */
+.weather-app {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+/* Weather Card */
+.weather-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Weather Header */
+.weather-header h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: #666;
+}
+
+.search-box button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #ff6f61;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-box button:hover {
+  background: #ff4a3d;
+}
+
+/* Weather Content */
+.weather-content {
+  margin-top: 20px;
+}
+
+.weather-icon i {
+  font-size: 5rem;
+  color: #ffd700; /* Gold color for the sun */
+}
+
+.weather-details h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.weather-details p {
+  margin: 5px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.extra-details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.extra-details p {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.extra-details i {
+  margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .weather-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .search-box input {
+    width: 60%;
+  }
+
+  .weather-icon i {
+    font-size: 4rem;
+  }
+
+  .weather-details h2 {
+    font-size: 1.5rem;
+  }
+
+  .extra-details p {
+    font-size: 0.8rem;
+  }
+}
