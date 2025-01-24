@@ -1,6 +1,5 @@
-const apiKey = "2a4031915c23ec6fbc2020b92686320e"; // Replace with your API key
-const apiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const apiKey = "2a4031915c23ec6fbc2020b92686320e";
+("https://api.openweathermap.org/data/2.5/weather?units=metric&q=");
 
 const searchBtn = document.getElementById("searchBtn");
 const locationInput = document.getElementById("locationInput");
@@ -22,18 +21,17 @@ searchBtn.addEventListener("click", () => {
 
 async function fetchWeather(location) {
   const url = `${apiUrl}${location}&appid=${apiKey}`;
-  console.log("Request URL:", url); // Debugging: Log the request URL
-
+  console.log("Request URL:", url);
   try {
     const response = await fetch(url);
-    console.log("Response Status:", response.status); // Debugging: Log the response status
+    console.log("Response Status:", response.status);
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
     const data = await response.json();
-    console.log("API Response:", data); // Debugging: Log the API response
+    console.log("API Response:", data);
 
     if (data.cod === 200) {
       displayWeather(data);
@@ -49,19 +47,16 @@ async function fetchWeather(location) {
 function displayWeather(data) {
   const { name, main, weather, wind } = data;
 
-  // Update the DOM with weather data
   cityName.textContent = name;
   temperature.textContent = `${Math.round(main.temp)}°C`;
   weatherDescription.textContent = weather[0].description;
   humidity.textContent = `${main.humidity}%`;
   windSpeed.textContent = `${wind.speed} km/h`;
 
-  // Update the weather icon
   const iconClass = getWeatherIconClass(weather[0].icon);
   weatherIcon.className = `wi ${iconClass}`;
 }
 
-// Function to map OpenWeatherMap icon codes to Weather Icons classes
 function getWeatherIconClass(iconCode) {
   const iconMap = {
     "01d": "wi-day-sunny",
@@ -83,5 +78,5 @@ function getWeatherIconClass(iconCode) {
     "50d": "wi-fog",
     "50n": "wi-fog",
   };
-  return iconMap[iconCode] || "wi-day-sunny"; // Default to sunny if no match
+  return iconMap[iconCode] || "wi-day-sunny";
 }
